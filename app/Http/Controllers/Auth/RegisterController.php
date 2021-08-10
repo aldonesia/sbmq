@@ -66,8 +66,11 @@ class RegisterController extends Controller
 	protected function create(array $data)
 	{
 		//Helpme::print_rdie($data['ipinfo']);
-		$data['ip'] = $data['ipinfo']->ip;
-		$data['hostname'] = isset($data['ipinfo']->hostname) ? $data['ipinfo']->hostname : sprintf("%s - %s", $data['ipinfo']->city, $data['ipinfo']->region);
+		// $data['ip'] = $data['ipinfo']->ip;
+		// $data['hostname'] = isset($data['ipinfo']->hostname) ? $data['ipinfo']->hostname : sprintf("%s - %s", $data['ipinfo']->city, $data['ipinfo']->region);
+
+		$data['ip'] = '';
+		$data['hostname'] = '';
 
 		$user = User::create([
 			'name'     => $data['name'],
